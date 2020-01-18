@@ -1,0 +1,9 @@
+diff -up ps_mem-3.1/ps_mem.than ps_mem-3.1/ps_mem
+--- ps_mem-3.1/ps_mem.than	2016-05-04 18:12:19.461446952 +0200
++++ ps_mem-3.1/ps_mem	2016-05-04 18:23:06.042017420 +0200
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python2
++#!/usr/bin/python2 -u
+ 
+ # Try to determine how much RAM is currently being used per program.
+ # Note per _program_, not per process. So for example this script

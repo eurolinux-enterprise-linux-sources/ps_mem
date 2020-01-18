@@ -1,7 +1,7 @@
 
 Name:           ps_mem
 Version:        3.1
-Release:        5%{?dist}
+Release:        7%{?dist}
 Summary:        Memory profiling tool
 Group:          Applications/System
 License:        LGPLv2
@@ -12,6 +12,7 @@ Source1:        http://www.gnu.org/licenses/lgpl-2.1.txt
 Source2:        ps_mem.1
 
 Patch0:         ps_mem-ennobling-the-s-switch.patch
+Patch1:         ps_mem-buffer.patch
 
 BuildArch:      noarch
 
@@ -38,7 +39,7 @@ cp -p %{SOURCE2} %{name}.1
 sed -i "s|/usr/bin/env python|%{__python2}|" %{name}
 
 %patch0 -p2
-
+%patch1 -p1
 
 %install
 install -Dpm755 %{name}   %{buildroot}%{_bindir}/%{name}
@@ -51,6 +52,12 @@ install -Dpm644 %{name}.1 %{buildroot}%{_mandir}/man1/%{name}.1
 
 
 %changelog
+* Wed Jun 15 2016 Than Ngo <than@redhat.com> - 3.1-7
+- Resolves: bz#1339579, inconsistency between --help and man page
+
+* Wed May 04 2016 Than Ngo <than@redhat.com> - 3.1-6
+- Resolves: bz#1330189, output is not redirected when ps_mem is killed
+
 * Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 3.1-5
 - Mass rebuild 2013-12-27
 
