@@ -1,7 +1,7 @@
 
 Name:           ps_mem
 Version:        3.1
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Memory profiling tool
 Group:          Applications/System
 License:        LGPLv2
@@ -51,6 +51,9 @@ install -Dpm644 %{name}.1 %{buildroot}%{_mandir}/man1/%{name}.1
 
 
 %changelog
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 3.1-5
+- Mass rebuild 2013-12-27
+
 * Wed Aug 14 2013 Jaromir Capik <jcapik@redhat.com> - 3.1-4
 - RH man page scan (#989490)
 
